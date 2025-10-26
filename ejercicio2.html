@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Demostración de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        
+        .section h2 {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        p {
+            font-size: 1.1em;
+            color: #666;
+            margin: 15px 0;
+            min-height: 30px;
+            padding: 15px;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        .alert-btn {
+            background-color: #28a745;
+        }
+        
+        .alert-btn:hover {
+            background-color: #218838;
+        }
+        
+        .text-btn {
+            background-color: #17a2b8;
+        }
+        
+        .text-btn:hover {
+            background-color: #138496;
+        }
+        
+        .console-info {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Demostración de salida en Javascript</h1>
+        
+        <div class="section">
+            <h2>1. Alerta con mi nombre</h2>
+            <button class="alert-btn" onclick="mostrarAlerta()">Mostrar Alerta</button>
+        </div>
+        
+        <div class="section">
+            <h2>2. Cambiar contenido del párrafo</h2>
+            <p id="textoParrafo"></p>
+            <button class="text-btn" onclick="cambiarTexto()">Cambiar Texto</button>
+        </div>
+        
+        <div class="console-info">
+            <strong>💡 Información:</strong> Abre la consola del navegador (F12) para ver el mensaje que se imprime al cargar la página.
+        </div>
+    </div>
+
+    <script>
+        // Mensaje que se imprime en la consola cuando se carga la página
+        console.log('¡Página cargada exitosamente! - Ejercicio 2 de JavaScript');
+        console.log('Desarrollado por: Braulio Arturo Raygoza Beltran');
+        console.log('Fecha de carga:', new Date().toLocaleString());
+        
+        // Función para mostrar alerta con mi nombre
+        function mostrarAlerta() {
+            alert('¡Hola! Mi nombre es Braulio Arturo Raygoza Beltran');
+        }
+        
+        // Función para cambiar el contenido del párrafo
+        function cambiarTexto() {
+            const parrafo = document.getElementById('textoParrafo');
+            parrafo.textContent = '¡Texto actualizado con Javascript!';
+            parrafo.style.color = '#28a745';
+            parrafo.style.borderColor = '#28a745';
+            parrafo.style.backgroundColor = '#d4edda';
+            
+            // También imprimir en consola cuando se cambia el texto
+            console.log('Texto del párrafo actualizado a:', parrafo.textContent);
+        }
+        
+        // Mensaje adicional en consola cuando el DOM está listo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM completamente cargado - Listo para interactuar');
+        });
+    </script>
+</body>
+</html>
